@@ -1,0 +1,26 @@
+{
+  "name": "rosemary_api_estoque",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thaihc/projetoModulo4.git"
+  },
+  "keywords": [
+    "API",
+    "Tatoo",
+    "Piercing",
+    "Studio",
+    "Rosemary"
+  ],
+  "author": "Thais Herculano de Carvalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thaihc/projetoModulo4/issues"
+  },
+  "homepage": "https://github.com/thaihc/projetoModulo4#readme"
+}
