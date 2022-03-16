@@ -4,5 +4,11 @@ const estoqueController = (app) => {
       Estoque: [],
     });
   });
+
+  app.post("/estoque", (req, res) => {
+    res.json({
+      msg: "Item adicionado ao estoque",
+    });
+  });
 };
 export default estoqueController;
