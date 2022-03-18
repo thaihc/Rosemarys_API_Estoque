@@ -1,4 +1,6 @@
-const estoqueController = (app) => {
+import Estoque from "../models/estoque.js";
+
+const estoqueController = (app, bd) => {
   app.get("/estoque", (req, res) => {
     res.json({
       Estoque: [],
