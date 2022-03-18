@@ -2,7 +2,6 @@ import express from "express";
 
 import estoqueController from "./controllers/estoque-controller.js";
 
-import generalMiddleware from "./middleware/general-middleware.js";
 import estoqueMiddleware from "./middleware/estoque-middleware.js";
 
 const app = express();
