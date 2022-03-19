@@ -1,7 +1,7 @@
 class Estoque {
   constructor(id, item, preco, quantidade, tipo) {
     this.id = id;
-    this.item = item;
+    this.nome = nome;
     this.preco = preco;
     this.quantidade = this.controleQuantidade(quantidade);
     this.tipo = tipo;
