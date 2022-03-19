@@ -62,4 +62,38 @@ app.delete("/estoque/nome/:nome", (req, res) => {
   });
 });
 
+app.put("/estoque/nome/:nome", (req, res) => {
+  const nome = req.params.nome;
+
+  const body = req.body;
+
+  try {
+    const estoqueAtualizado = new Estoque(
+      body.id,
+      body.nome,
+      body.preco,
+      body.quantidade,
+      body.tipo
+    );
+
+    bd.estoqueOk = bd.estoqueOk.map((estoque) => {
+      if (estoque.nome === nome) {
+        return estoqueAtualizado;
+      }
+      return estoque;
+    });
+
+    res.json({
+      msg: `Produto ${estoqueAtualizado.nome} atualizado no estoque com sucesso`,
+      estoque: estoqueAtualizado,
+      erro: false,
+    });
+  } catch (error) {
+    res.json({
+      msg: error.message,
+      erro: true,
+    });
+  }
+});
+
 export default estoqueController;
