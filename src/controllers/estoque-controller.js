@@ -2,8 +2,11 @@ import Estoque from "../models/estoque.js";
 
 const estoqueController = (app, bd) => {
   app.get("/estoque", (req, res) => {
+    const todoEstoque = bd.estoqueOk;
+
     res.json({
-      Estoque: [],
+      estoqueOk: todoEstoque,
+      erro: false,
     });
   });
 
