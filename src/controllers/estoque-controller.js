@@ -49,4 +49,17 @@ const estoqueController = (app, bd) => {
     }
   });
 };
+
+app.delete("/estoque/nome/:nome", (req, res) => {
+  const nome = req.params.nome;
+
+  const novoBD = bd.estoqueOk.filter((estoque) => estoque.nome !== nome);
+  bd.estoqueOk = novoBD;
+
+  res.json({
+    msg: `Produto ${nome} excluido do estoque com sucesso!`,
+    erro: false,
+  });
+});
+
 export default estoqueController;
