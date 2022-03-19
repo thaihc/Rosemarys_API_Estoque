@@ -10,6 +10,18 @@ const estoqueController = (app, bd) => {
     });
   });
 
+  app.get("/estoque/nome/:nome", (req, res) => {
+    const nome = req.params.nome;
+    const produtoEncontrado = bd.estoqueOk.filter(
+      (estoque) => estoque.nome == nome
+    );
+
+    res.json({
+      estoque: produtoEncontrado,
+      erro: false,
+    });
+  });
+
   app.post("/estoque", (req, res) => {
     const body = req.body;
 
