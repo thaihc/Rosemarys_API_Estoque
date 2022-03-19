@@ -21,6 +21,7 @@
   ],
   "author": "Thais Herculano de Carvalho",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/thaihc/projetoModulo4/issues"
   },
@@ -31,6 +32,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  },
-  "type": "module"
+  }
 }
