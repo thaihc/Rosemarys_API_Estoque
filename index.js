@@ -13,7 +13,7 @@ app.use(express.json());
 
 generalMiddleware(app);
 
-estoqueController(app, bd, database);
+estoqueController(app, database);
 
 app.listen(port, () => {
   console.log(`Abrindo a porta no servidor http://localhost:${port}/`);
