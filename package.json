@@ -2,11 +2,11 @@
   "name": "rosemary_api_estoque",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js",
-    "dev": "nodemon ./index.js",
+    "start": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js",
     "db": "node ./src/database/create-populate.js"
   },
   "repository": {

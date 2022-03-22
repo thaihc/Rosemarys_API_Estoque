@@ -1,10 +1,10 @@
 import express from "express";
 
-import estoqueController from "./src/controllers/estoque-controller.js";
+import estoqueController from "./controllers/estoque-controller.js";
 
-import generalMiddleware from "./src/middleware/general-middleware.js";
+import generalMiddleware from "./middleware/general-middleware.js";
 
-import database from "./src/database/db-sqlite.js";
+import database from "./database/db-sqlite.js";
 
 const app = express();
 const port = 3000;
