@@ -20,10 +20,10 @@ O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com frame
 *Framework*
 - [Express](https://www.npmjs.com/package/express) v.4.17.3
 
-* Biblioteca*
+*Biblioteca*
 - [Nodemon](https://www.npmjs.com/package/nodemon) v.2.0.15
 
-* Banco de dados*
+*Banco de dados*
 - [SQLite](https://www.npmjs.com/package/sqlite3)  v.5.0.0
 
 ---
