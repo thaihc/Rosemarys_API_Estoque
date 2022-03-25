@@ -1,6 +1,7 @@
 <h1 align="center"> Rosemary's API </h1>
----
+
 ## Sobre o projeto
+
 A proposta do projeto é a criação de uma API que retorna os dados do <strong>Estoque<strong> de um estúdio de Tatuagem, utilizando o padrão REST, os verbos HTTP e aplicando as operações CRUD.
 
 O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/), utilizando como editor o [VSCode] (https://code.visualstudio.com/).
