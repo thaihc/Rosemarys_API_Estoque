@@ -27,8 +27,73 @@ O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com frame
 - [SQLite](https://www.npmjs.com/package/sqlite3)  v.5.0.0
 
 ---
+## Instalação
+1- Abra o terminal para rodar os comandos abaixo:
 
-README EM DESENVOLVIMENTO
+2- Clone o repositório:
+```
+git clone git@github.com:thaihc/Rosemarys_API_Estoque.git 
+```
+3- Entre na pasta:
+```
+cd Rosemarys_API_Estoque
+```
+
+4- Instale os pacotes:
+```
+npm install
+```
+
+5- Crie e popule o banco de dados:
+```
+npm run db
+```
+
+6- Inicie o servidor:
+```
+npm start ou npm run dev
+```
+O servidor será aberto na porta:3000 - acesse <http://localhost:3000>
+---
+
+## Rotas implementadas para Estoque
+
+ * **GET /estoque**
+  
+  ```
+  Buscando todos os registros do Estoque:
+  ```
+ Foto Insomnia
+    
+ * **GET /estoque/nome/{nome}**
+  
+  ```
+  Buscando registros através do nome:
+  ```
+  Foto Insomnia
+
+ * **POST /estoque**
+  
+  ```
+  Criando novos registros:
+  ```
+  Foto Insomnia
+     
+
+ * **PUT /estoque/id/{id}**
+  
+  ```
+  Alterando os registros através do id:
+  ```
+  Foto Insomnia
+   
+
+ * **DELETE /estoque/id/{id}**
+  
+  ```
+  Deletando registros através do id:
+  ```
+  Foto Insomnia
 
 ---
 ## Autoria
