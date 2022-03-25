@@ -22,8 +22,17 @@ INSERT INTO ESTOQUE (NOME, PRECO, QUANTIDADE, TIPO)
 VALUES
     ('Agulha Esterelizada', '27.90', 10, 'Estudio'),
     ('Biqueiras', '51.30', 15, 'Estudio'),
+    ('Piercing Industrial', '50.00', 50, 'Estudio'),
+    ('Piercing Septo', '70.00', 30, 'Estudio'),
+    ('Cartuchos', '280.00', 30, 'Estudio'),
+    ('Agulha Soldada', '94.84', 60, 'Estudio'),
+    ('Tips Descartáveis', '44.90', 30, 'Estudio'),
+    ('Cerveja Bred Artesanal', '20.50', 15, 'Loja'),
     ('Cigarro Eletronico', '159.90', 5,'Loja'),
-    ('Cerveja Bred Artesanal', '20.50', 15, 'Loja')
+    ('Tatoo Gel', '24.99', 100,'Loja'),
+    ('Vaselina FreshTatoo', '64.90', 40,'Loja'),
+    ('Camiseta Rosemarys', '49.90', 30,'Loja')
+
 `;
 
 function criaTabelaEst() {
