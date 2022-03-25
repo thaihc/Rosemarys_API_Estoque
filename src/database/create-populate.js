@@ -32,7 +32,6 @@ VALUES
     ('Tatoo Gel', '24.99', 100,'Loja'),
     ('Vaselina FreshTatoo', '64.90', 40,'Loja'),
     ('Camiseta Rosemarys', '49.90', 30,'Loja')
-
 `;
 
 function criaTabelaEst() {
