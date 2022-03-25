@@ -1,10 +1,9 @@
 class EstoqueSchema {
-  constructor(id, nome, preco, quantidade, tipo) {
-    this.id = id;
-    this.nome = nome;
-    this.preco = preco;
-    this.quantidade = quantidade;
-    this.tipo = tipo;
+  constructor(NOME, PRECO, QUANTIDADE, TIPO) {
+    this.NOME = NOME;
+    this.PRECO = PRECO;
+    this.QUANTIDADE = QUANTIDADE;
+    this.TIPO = TIPO;
   }
 }
 

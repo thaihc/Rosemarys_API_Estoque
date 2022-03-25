@@ -7,15 +7,9 @@ class EstoqueDAO {
     return new Promise((resolve, reject) => {
       this.db.all("SELECT * FROM ESTOQUE", (error, rows) => {
         if (error) {
-          reject({
-            mensagem: error.message,
-            erro: true,
-          });
+          reject(error);
         } else {
-          resolve({
-            estoque: rows,
-            erro: false,
-          });
+          resolve(rows);
         }
       });
     });
@@ -28,15 +22,9 @@ class EstoqueDAO {
         nome,
         (error, rows) => {
           if (error) {
-            reject({
-              mensagem: error.message,
-              erro: true,
-            });
+            reject(error);
           } else {
-            resolve({
-              estoque: rows,
-              erro: false,
-            });
+            resolve(rows);
           }
         }
       );
@@ -46,24 +34,16 @@ class EstoqueDAO {
   insereItem = (novoItem) => {
     return new Promise((resolve, reject) => {
       this.db.run(
-        "INSERT INTO ESTOQUE(ID, NOME, PRECO, QUANTIDADE, TIPO) VALUES (?, ?, ?, ?, ?)",
-        novoItem.id,
-        novoItem.nome,
-        novoItem.preco,
-        novoItem.quantidade,
-        novoItem.tipo,
+        "INSERT INTO ESTOQUE (NOME, PRECO, QUANTIDADE, TIPO) VALUES (?, ?, ?, ?)",
+        novoItem.NOME,
+        novoItem.PRECO,
+        novoItem.QUANTIDADE,
+        novoItem.TIPO,
         (error) => {
           if (error) {
-            reject({
-              mensagem: error.message,
-              erro: true,
-            });
+            reject(error);
           } else {
-            resolve({
-              mensagem: `Item ${novoItem.nome} inserido com sucesso`,
-              item: novoItem,
-              erro: false,
-            });
+            resolve(`Item ${novoItem.NOME} inserido com sucesso`);
           }
         }
       );
@@ -74,41 +54,28 @@ class EstoqueDAO {
     return new Promise((resolve, reject) => {
       this.db.run("DELETE FROM ESTOQUE WHERE ID = ?", id, (error) => {
         if (error) {
-          reject({
-            mensagem: error.message,
-            erro: true,
-          });
+          reject(error);
         } else {
-          resolve({
-            item: `Item de id ${id} deletado com sucesso`,
-            erro: false,
-          });
+          resolve(`Item de id ${id} deletado com sucesso`);
         }
       });
     });
   };
 
-  atualizaItem = (id, item) => {
+  atualizaItem = (ID, item) => {
     return new Promise((resolve, reject) => {
       this.db.run(
-        "UPDATE ESTOQUE SET NOME = ?, PRECO = ?, QUANTIDADE = ? TIPO = ?",
-        item.nome,
-        item.preco,
-        item.quantidade,
-        item.tipo,
-        id,
+        "UPDATE ESTOQUE SET NOME = ?, PRECO = ?, QUANTIDADE = ?, TIPO = ? WHERE ID = ?",
+        item.NOME,
+        item.PRECO,
+        item.QUANTIDADE,
+        item.TIPO,
+        ID,
         (error) => {
           if (error) {
-            reject({
-              mensagem: error.message,
-              erro: true,
-            });
+            reject(error);
           } else {
-            resolve({
-              mensagem: `Item de id ${id} atualizado com sucesso`,
-              item: item,
-              erro: false,
-            });
+            resolve(`Item de id ${ID} atualizado com sucesso`);
           }
         }
       );

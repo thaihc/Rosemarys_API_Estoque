@@ -25,11 +25,10 @@ class Estoque {
   insereItem = async (item) => {
     try {
       const novoItem = new EstoqueSchema(
-        item.id,
-        item.nome,
-        item.preco,
-        item.quantidade,
-        item.tipo
+        item.NOME,
+        item.PRECO,
+        item.QUANTIDADE,
+        item.TIPO
       );
       return await this.dao.insereItem(novoItem);
     } catch (error) {
@@ -48,11 +47,10 @@ class Estoque {
   atualizaItem = async (id, item) => {
     try {
       const estoqueAtualizado = new EstoqueSchema(
-        item.id,
-        item.nome,
-        item.preco,
-        item.quantidade,
-        item.tipo
+        item.NOME,
+        item.PRECO,
+        item.QUANTIDADE,
+        item.TIPO
       );
 
       return await this.dao.atualizaItem(id, estoqueAtualizado);

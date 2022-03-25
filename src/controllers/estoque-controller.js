@@ -39,13 +39,13 @@ const estoqueController = (app, bd) => {
 
     try {
       const resposta = await estoqueModel.insereItem(body);
-      res.json({
+      res.status(201).json({
         mensagem: resposta,
-        estoquw: body,
+        estoque: body,
         erro: false,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         msg: error.message,
         erro: true,
       });
