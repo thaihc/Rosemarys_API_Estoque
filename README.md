@@ -4,7 +4,7 @@
 
 A proposta do projeto é a criação de uma API que retorna os dados do <strong>Estoque<strong> de um estúdio de Tatuagem, utilizando o padrão REST, os verbos HTTP e aplicando as operações CRUD.
 
-O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/), utilizando como editor o [VSCode] (https://code.visualstudio.com/).
+<p> O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/), utilizando como editor o VSCode (https://code.visualstudio.com/). <p>
   
 ---
   
@@ -28,28 +28,28 @@ O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com frame
 
 ---
 ## Instalação
-1- Abra o terminal para rodar os comandos abaixo:
+- Abra o terminal para rodar os comandos abaixo:
 
-2- Clone o repositório:
+1- Clone o repositório:
 ```
 git clone git@github.com:thaihc/Rosemarys_API_Estoque.git 
 ```
-3- Entre na pasta:
+2- Entre na pasta:
 ```
 cd Rosemarys_API_Estoque
 ```
 
-4- Instale os pacotes:
+3- Instale os pacotes:
 ```
 npm install
 ```
 
-5- Crie e popule o banco de dados:
+4- Crie e popule o banco de dados:
 ```
 npm run db
 ```
 
-6- Inicie o servidor:
+5- Inicie o servidor:
 ```
 npm start ou npm run dev
 ```
