@@ -63,21 +63,21 @@ O servidor será aberto na porta:3000 - acesse <http://localhost:3000>
   ```
   Buscando todos os registros do Estoque:
   ```
- Foto Insomnia
+ ![Rota get](https://user-images.githubusercontent.com/93946257/160214559-5de90161-e326-4a7b-bd7b-4abe6bef0c86.png)
     
  * **GET /estoque/nome/{nome}**
   
   ```
   Buscando registros através do nome:
   ```
-  Foto Insomnia
+  ![rota get com nome](https://user-images.githubusercontent.com/93946257/160214557-8bb2fd90-11bd-494a-b30e-af058fdde845.png)
 
  * **POST /estoque**
   
   ```
   Criando novos registros:
   ```
-  Foto Insomnia
+  ![Rota post](https://user-images.githubusercontent.com/93946257/160214561-91757746-40f3-43c8-a6fa-10777e950328.png)
      
 
  * **PUT /estoque/id/{id}**
@@ -85,15 +85,14 @@ O servidor será aberto na porta:3000 - acesse <http://localhost:3000>
   ```
   Alterando os registros através do id:
   ```
-  Foto Insomnia
-   
+  ![Rota put](https://user-images.githubusercontent.com/93946257/160214562-bfa1d306-bd8f-41d9-95f4-8d13e1dfd7af.png)
 
  * **DELETE /estoque/id/{id}**
   
   ```
   Deletando registros através do id:
   ```
-  Foto Insomnia
+  ![Rota delete](https://user-images.githubusercontent.com/93946257/160214554-246d470c-d92c-4fa5-8927-f0b5cd570f19.png)
 
 ---
 ## Autoria
