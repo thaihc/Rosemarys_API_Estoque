@@ -1,52 +1,49 @@
-import EstoqueDAO from "../DAO/estoqueDAO.js";
 import Estoque from "../models/estoque.js";
 
 const estoqueController = (app, bd) => {
-  const estoqueDAO = new EstoqueDAO(bd);
+  const estoqueModel = new Estoque(bd);
 
-  app.get("/estoque", (req, res) => {
-    estoqueDAO
-      .acessaTodoEstoque()
-      .then((resposta) => {
-        res.json(resposta);
-      })
-      .catch((erro) => {
-        res.json(erro);
+  app.get("/estoque", async (req, res) => {
+    try {
+      const resposta = await estoqueModel.acessaTodoEstoque();
+      res.json({
+        estoque: resposta,
+        erro: false,
       });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
   });
 
-  app.get("/estoque/nome/:nome", (req, res) => {
+  app.get("/estoque/nome/:nome", async (req, res) => {
     const nome = req.params.nome;
-    estoqueDAO
-      .acessaUmAtributo(nome)
-      .then((resposta) => {
-        res.json(resposta);
-      })
-      .catch((erro) => {
-        res.json(erro);
+    try {
+      const resposta = await estoqueModel.acessaUmAtributo(nome);
+      res.json({
+        estoque: resposta,
+        erro: false,
       });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
   });
 
-  app.post("/estoque", (req, res) => {
+  app.post("/estoque", async (req, res) => {
     const body = req.body;
 
     try {
-      const novoProduto = new Estoque(
-        body.id,
-        body.nome,
-        body.preco,
-        body.quantidade,
-        body.tipo
-      );
-
-      estoqueDAO
-        .insereItem(novoItem)
-        .then((resposta) => {
-          res.json(resposta);
-        })
-        .catch((erro) => {
-          res.json(erro);
-        });
+      const resposta = await estoqueModel.insereItem(body);
+      res.json({
+        mensagem: resposta,
+        estoquw: body,
+        erro: false,
+      });
     } catch (error) {
       res.json({
         msg: error.message,
@@ -55,45 +52,38 @@ const estoqueController = (app, bd) => {
     }
   });
 
-  app.delete("/estoque/id/:id", (req, res) => {
-    const nome = req.params.id;
-
-    tarefaDAO
-      .deletaItem(id)
-      .then((resposta) => {
-        res.json(resposta);
-      })
-      .catch((erro) => {
-        res.json(erro);
+  app.delete("/estoque/id/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+      const resposta = await estoqueModel.deletaItem(id);
+      res.json({
+        mensagem: resposta,
+        erro: false,
       });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
   });
 
-  app.put("/estoque/id/:id", (req, res) => {
-    const nome = req.params.id;
+  app.put("/estoque/id/:id", async (req, res) => {
+    const id = req.params.id;
 
     const body = req.body;
 
     try {
-      const estoqueAtualizado = new Estoque(
-        body.id,
-        body.nome,
-        body.preco,
-        body.quantidade,
-        body.tipo
-      );
-
-      estoqueDAO
-        .atualizaItem(id, estoqueAtualizado)
-        .then((resposta) => {
-          res.json(resposta);
-        })
-        .catch((erro) => {
-          res.json(erro);
-        });
+      const resposta = await estoqueModel.atualizaItem(id, body);
+      res.json({
+        mensagem: resposta,
+        estoque: body,
+        erro: false,
+      });
     } catch (error) {
       res.json({
-        msg: error.message,
-        erro: true,
+        mensagem: error.message,
+        erro: false,
       });
     }
   });
