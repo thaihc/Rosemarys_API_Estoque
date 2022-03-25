@@ -1,100 +1,64 @@
+import EstoqueDAO from "../DAO/estoqueDAO.js";
+import EstoqueSchema from "./schema/estoqueSchema.js";
 
+class Estoque {
+  constructor(db) {
+    this.dao = new EstoqueDAO(db);
+  }
 
+  acessaTodoEstoque = async () => {
+    try {
+      return await this.dao.acessaTodoEstoque();
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  acessaUmAtributo = async (nome) => {
+    try {
+      return await this.dao.acessaUmAtributo(nome);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  insereItem = async (item) => {
+    try {
+      const novoItem = new EstoqueSchema(
+        item.id,
+        item.nome,
+        item.preco,
+        item.quantidade,
+        item.tipo
+      );
+      return await this.dao.insereItem(novoItem);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  deletaItem = async (id) => {
+    try {
+      return await this.dao.deletaItem(id);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  atualizaItem = async (id, item) => {
+    try {
+      const estoqueAtualizado = new EstoqueSchema(
+        item.id,
+        item.nome,
+        item.preco,
+        item.quantidade,
+        item.tipo
+      );
+
+      return await this.dao.atualizaItem(id, estoqueAtualizado);
+    } catch (error) {
+      throw error;
+    }
+  };
+}
 export default Estoque;
-
-app.get("/estoque", (req, res) => {
-  estoqueDAO
-    .acessaTodoEstoque()
-    .then((resposta) => {
-      res.json(resposta);
-    })
-    .catch((erro) => {
-      res.json(erro);
-    });
-});
-
-app.get("/estoque/nome/:nome", (req, res) => {
-  const nome = req.params.nome;
-  estoqueDAO
-    .acessaUmAtributo(nome)
-    .then((resposta) => {
-      res.json(resposta);
-    })
-    .catch((erro) => {
-      res.json(erro);
-    });
-});
-
-app.post("/estoque", (req, res) => {
-  const body = req.body;
-
-  try {
-    const novoProduto = new Estoque(
-      body.id,
-      body.nome,
-      body.preco,
-      body.quantidade,
-      body.tipo
-    );
-
-    estoqueDAO
-      .insereItem(novoItem)
-      .then((resposta) => {
-        res.json(resposta);
-      })
-      .catch((erro) => {
-        res.json(erro);
-      });
-  } catch (error) {
-    res.json({
-      msg: error.message,
-      erro: true,
-    });
-  }
-});
-
-app.delete("/estoque/id/:id", (req, res) => {
-  const nome = req.params.id;
-
-  tarefaDAO
-    .deletaItem(id)
-    .then((resposta) => {
-      res.json(resposta);
-    })
-    .catch((erro) => {
-      res.json(erro);
-    });
-});
-
-app.put("/estoque/id/:id", (req, res) => {
-  const nome = req.params.id;
-
-  const body = req.body;
-
-  try {
-    const estoqueAtualizado = new Estoque(
-      body.id,
-      body.nome,
-      body.preco,
-      body.quantidade,
-      body.tipo
-    );
-
-    estoqueDAO
-      .atualizaItem(id, estoqueAtualizado)
-      .then((resposta) => {
-        res.json(resposta);
-      })
-      .catch((erro) => {
-        res.json(erro);
-      });
-  } catch (error) {
-    res.json({
-      msg: error.message,
-      erro: true,
-    });
-  }
-});
-};
-
-export default estoqueController;
