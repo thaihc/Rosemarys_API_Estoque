@@ -2,7 +2,7 @@
 
 ## Sobre o projeto
 
-A proposta do projeto é a criação de uma API que retorna os dados do <strong>Estoque<strong> de um estúdio de Tatuagem, utilizando o padrão REST, os verbos HTTP e aplicando as operações CRUD.
+<p>A proposta do projeto é a criação de uma API que retorna os dados do Estoque de um estúdio de Tatuagem, utilizando o padrão REST, os verbos HTTP e aplicando as operações CRUD.<p>
 
 <p> O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/), utilizando como editor o VSCode (https://code.visualstudio.com/). <p>
   
@@ -53,7 +53,8 @@ npm run db
 ```
 npm start ou npm run dev
 ```
-O servidor será aberto na porta:3000 - acesse <http://localhost:3000>
+
+ <p> O servidor será aberto na porta:3000 - acesse <http://localhost:3000> <p>
 ---
 
 ## Rotas implementadas para Estoque
@@ -69,6 +70,7 @@ O servidor será aberto na porta:3000 - acesse <http://localhost:3000>
   
   ```
   Buscando registros através do nome:
+  Obs: A busca deve ser feita respeitando espaços,letras maiúsculas e minúsculas.
   ```
   ![rota get com nome](https://user-images.githubusercontent.com/93946257/160214557-8bb2fd90-11bd-494a-b30e-af058fdde845.png)
 
