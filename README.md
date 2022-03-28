@@ -54,7 +54,9 @@ npm run db
 npm start ou npm run dev
 ```
 
- <p> O servidor será aberto na porta: 3000 - acesse <p> http://localhost:3000 
+ <p> O servidor será aberto na porta: 3000 - acesse <p> 
+   http://localhost:3000//
+   
 ---
 
 ## Rotas implementadas para Estoque
