@@ -4,7 +4,7 @@
 
 <p>A proposta do projeto é a criação de uma API que retorna os dados do Estoque de um estúdio de Tatuagem, utilizando o padrão REST, os verbos HTTP e aplicando as operações CRUD.<p>
 
-<p> O projeto foi realizado utilizando o [Node.js](https://nodejs.org/en/) com framework [Express](https://expressjs.com/), utilizando como editor o VSCode (https://code.visualstudio.com/). <p>
+<p> O projeto foi realizado utilizando o Node.js (https://nodejs.org/en/) com framework Express (https://expressjs.com/), utilizando como editor o VSCode (https://code.visualstudio.com/). <p>
   
 ---
   
