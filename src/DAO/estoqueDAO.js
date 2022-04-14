@@ -31,6 +31,22 @@ class EstoqueDAO {
     });
   };
 
+  acessaUmTipo = (tipo) => {
+    return new Promise((resolve, reject) => {
+      this.db.all(
+        "SELECT * FROM ESTOQUE WHERE TIPO = ?",
+        tipo,
+        (error, rows) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(rows);
+          }
+        }
+      );
+    });
+  };
+
   insereItem = (novoItem) => {
     return new Promise((resolve, reject) => {
       this.db.run(

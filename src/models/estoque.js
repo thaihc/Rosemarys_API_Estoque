@@ -22,6 +22,14 @@ class Estoque {
     }
   };
 
+  acessaUmTipo = async (tipo) => {
+    try {
+      return await this.dao.acessaUmTipo(tipo);
+    } catch (error) {
+      throw error;
+    }
+  };
+
   insereItem = async (item) => {
     try {
       const novoItem = new EstoqueSchema(

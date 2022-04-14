@@ -34,6 +34,22 @@ const estoqueController = (app, bd) => {
     }
   });
 
+  app.get("/estoque/tipo/:tipo", async (req, res) => {
+    const tipo = req.params.tipo;
+    try {
+      const resposta = await estoqueModel.acessaUmTipo(tipo);
+      res.json({
+        estoque: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
+  });
+
   app.post("/estoque", async (req, res) => {
     const body = req.body;
 
