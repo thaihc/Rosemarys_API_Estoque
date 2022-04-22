@@ -7,7 +7,7 @@ import generalMiddleware from "./middleware/general-middleware.js";
 import database from "./database/db-sqlite.js";
 
 const app = express();
-const port = 3000;
+const port = 3000 || process.env.PORT;
 
 app.use(express.json());
 
