@@ -15,6 +15,18 @@ class EstoqueDAO {
     });
   };
 
+  acessaEstoquePalavraChave = (nome) => {
+    return new Promise((resolve, reject) => {
+      this.db.all(`SELECT * FROM ESTOQUE WHERE NOME LIKE '${nome}%'`, (error, rows) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(rows);
+        }
+      });
+    });
+  };
+  
   acessaUmAtributo = (nome) => {
     return new Promise((resolve, reject) => {
       this.db.all(

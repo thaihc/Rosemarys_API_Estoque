@@ -2,16 +2,13 @@ import express from "express";
 
 import estoqueController from "./controllers/estoque-controller.js";
 
-import generalMiddleware from "./middleware/general-middleware.js";
 
 import database from "./database/db-sqlite.js";
 
 const app = express();
-const port = 3000 || process.env.PORT;
+const port = 3001 || process.env.PORT;
 
 app.use(express.json());
-
-generalMiddleware(app);
 
 estoqueController(app, database);
 

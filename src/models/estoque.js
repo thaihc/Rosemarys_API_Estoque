@@ -22,6 +22,14 @@ class Estoque {
     }
   };
 
+  acessaPeloNome = async (nome) => {
+    try {
+      return await this.dao.acessaEstoquePalavraChave(nome);
+    } catch (error) {
+      throw error;
+    }
+  };
+
   acessaUmTipo = async (tipo) => {
     try {
       return await this.dao.acessaUmTipo(tipo);

@@ -34,6 +34,24 @@ const estoqueController = (app, bd) => {
     }
   });
 
+
+  app.get("/estoque/nome-estoque/:nome", async (req, res) => {
+    const nome = req.params.nome;
+    try {
+      const resposta = await estoqueModel.acessaPeloNome(nome);
+      console.log(resposta);
+      res.json({
+        estoque: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
+  });
+
   app.get("/estoque/tipo/:tipo", async (req, res) => {
     const tipo = req.params.tipo;
     try {
