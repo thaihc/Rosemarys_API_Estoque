@@ -38,6 +38,14 @@ class Estoque {
     }
   };
 
+  acessaPeloId = async (id) => {
+    try {
+      return await this.dao.acessaPleoId(id);
+    } catch (error) {
+      throw error;
+    }
+  };
+
   insereItem = async (item) => {
     try {
       const novoItem = new EstoqueSchema(

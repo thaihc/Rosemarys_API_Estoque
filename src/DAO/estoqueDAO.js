@@ -59,6 +59,22 @@ class EstoqueDAO {
     });
   };
 
+  acessaPleoId = (id) => {
+    return new Promise((resolve, reject) => {
+      this.db.all(
+        "SELECT * FROM ESTOQUE WHERE ID = ?",
+        id,
+        (error, rows) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(rows);
+          }
+        }
+      );
+    });
+  };
+
   insereItem = (novoItem) => {
     return new Promise((resolve, reject) => {
       this.db.run(

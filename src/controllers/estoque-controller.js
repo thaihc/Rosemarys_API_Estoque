@@ -68,6 +68,22 @@ const estoqueController = (app, bd) => {
     }
   });
 
+  app.get("/estoque/id/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+      const resposta = await estoqueModel.acessaPeloId(id);
+      res.json({
+        estoque: resposta,
+        erro: false,
+      });
+    } catch (error) {
+      res.json({
+        mensagem: error.message,
+        erro: false,
+      });
+    }
+  });
+
   app.post("/estoque", async (req, res) => {
     const body = req.body;
 
