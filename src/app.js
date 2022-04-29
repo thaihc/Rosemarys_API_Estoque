@@ -2,7 +2,6 @@ import express from "express";
 
 import estoqueController from "./controllers/estoque-controller.js";
 
-
 import database from "./database/db-sqlite.js";
 
 const app = express();
@@ -13,5 +12,5 @@ app.use(express.json());
 estoqueController(app, database);
 
 app.listen(port, () => {
-  console.log(`Abrindo a porta no servidor http://localhost:${port}/`);
+  console.log(`Abrindo a porta no servidor 3000 http://localhost:${port}/`);
 });
